@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FeedbackService } from '../feedback.service';
 import { Feedback } from '../feedback';
 
 @Component({
@@ -9,12 +10,18 @@ import { Feedback } from '../feedback';
 export class SubmitFeedbackComponent implements OnInit {
   feedback: Feedback;
 
-  constructor() { }
+  constructor(private feedbackService: FeedbackService) { }
 
-  addRecipient(author: string, recipient: string, content: string): void {
-    this.feedback = { author, recipient, content };
+  addFeedback(author: string, recipient: string, content: string): void {
+    this.feedbackService.add({author, recipient, content});
+    this.getFeedback();
   }
 
-  ngOnInit() { }
+  getFeedback(): void {
+    this.feedback = this.feedbackService.get();
+  }
 
+  ngOnInit() {
+    this.getFeedback();
+  }
 }
