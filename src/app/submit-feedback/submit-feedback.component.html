@@ -1,11 +1,15 @@
 <label>
-  Recipient: <input [(ngModel)]="currentFeedback.recipient" placeholder="Jan Jansen"/>
-</label>
+  Author: <input #author placeholder="Your name"/>
+</label><br>
+<label>
+  Recipient: <input #recipient (keyup)="0" placeholder="Jan Jansen"/>
+</label><br>
+<textarea #content></textarea><br>
 
-<button (click)="add()">Add</button>
+<button (click)="addRecipient(author.value, recipient.value, content.value)">Submit</button>
 
-<ul>
-  <li *ngFor="let feedback of feedbacks">
-    <span>{{feedback.recipient}}</span>
-  </li>
-</ul>
+<p *ngIf="feedback">
+  {{feedback.author}}<br>
+  {{feedback.recipient}}<br>
+  {{feedback.content}}
+</p>

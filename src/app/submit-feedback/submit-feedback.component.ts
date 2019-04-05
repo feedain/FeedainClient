@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Feedback } from '../feedback';
-import { FeedbackService } from '../feedback.service';
 
 @Component({
   selector: 'app-submit-feedback',
@@ -8,23 +7,14 @@ import { FeedbackService } from '../feedback.service';
   styleUrls: ['./submit-feedback.component.css']
 })
 export class SubmitFeedbackComponent implements OnInit {
-  currentFeedback: Feedback = {
-    recipient: 'test'
-  };
-  feedbacks: Feedback[];
+  feedback: Feedback;
 
-  constructor(private feedbackService: FeedbackService) { }
+  constructor() { }
 
-  getFeedbacks(): void {
-    this.feedbacks = this.feedbackService.getFeedbacks();
+  addRecipient(author: string, recipient: string, content: string): void {
+    this.feedback = { author, recipient, content };
   }
 
-  add(): void {
-    this.feedbackService.add(this.currentFeedback);
-  }
-
-  ngOnInit() {
-    this.getFeedbacks();
-  }
+  ngOnInit() { }
 
 }
