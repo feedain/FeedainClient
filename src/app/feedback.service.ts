@@ -8,16 +8,18 @@ import { Feedback } from './feedback';
   providedIn: 'root'
 })
 export class FeedbackService {
-  feedback: Feedback;
+  feedbacks: Feedback[] = [
+    {author: 'test', recipient: 'test', content: 'test'}
+  ];
 
   constructor() { }
 
-  add(feedback: Feedback): Observable<any> {
-    this.feedback = feedback;
-    return of(this.feedback);
+  add(feedback: Feedback): Observable<Feedback> {
+    this.feedbacks.push(feedback);
+    return of(feedback);
   }
 
-  get(): Observable<Feedback> {
-    return of(this.feedback);
+  get(): Observable<Feedback[]> {
+    return of(this.feedbacks);
   }
 }

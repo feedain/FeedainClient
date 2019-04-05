@@ -8,8 +8,10 @@
 
 <button (click)="addFeedback(author.value, recipient.value, content.value)">Submit</button>
 
-<p *ngIf="feedback">
-  {{feedback.author}}<br>
-  {{feedback.recipient}}<br>
-  {{feedback.content}}
-</p>
+<ul *ngIf="feedbacks">
+  <li *ngFor="let feedback of feedbacks">
+    {{feedback.author}}<br>
+    {{feedback.recipient}}<br>
+    {{feedback.content}}
+  </li>
+</ul>

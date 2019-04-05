@@ -8,16 +8,17 @@ import { Feedback } from '../feedback';
   styleUrls: ['./submit-feedback.component.css']
 })
 export class SubmitFeedbackComponent implements OnInit {
-  feedback: Feedback;
+  feedbacks: Feedback[];
 
   constructor(private feedbackService: FeedbackService) { }
 
   addFeedback(author: string, recipient: string, content: string): void {
-    this.feedbackService.add({author, recipient, content}).subscribe(feedback => this.feedback = feedback);
+    this.feedbackService.add({author, recipient, content})
+      .subscribe(feedback => this.feedbacks.push(feedback));
   }
 
   getFeedback(): void {
-    this.feedbackService.get().subscribe(feedback => this.feedback = feedback);
+    this.feedbackService.get().subscribe(feedbacks => this.feedbacks = feedbacks);
   }
 
   ngOnInit() {
