@@ -1,0 +1,7 @@
+<label>Recipient: <input [(ngModel)]="currentFeedback.recipient" placeholder="Jan Jansen"/></label>
+<button (click)="add()">Add</button>
+<ul>
+  <li *ngFor="let feedback of feedbacks">
+    <span>{{feedback.recipient}}</span>
+  </li>
+</ul>
