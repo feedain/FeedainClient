@@ -18,7 +18,7 @@ export class SubmitFeedbackComponent implements OnInit {
   }
 
   getFeedback(): void {
-    this.feedback = this.feedbackService.get();
+    this.feedbackService.get().subscribe(feedback => this.feedback = feedback);
   }
 
   ngOnInit() {

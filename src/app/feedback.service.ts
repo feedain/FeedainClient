@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { Observable, of } from 'rxjs';
+
 import { Feedback } from './feedback';
 
 @Injectable({
@@ -14,7 +16,7 @@ export class FeedbackService {
     this.feedback = feedback;
   }
 
-  get(): Feedback {
-    return this.feedback;
+  get(): Observable<Feedback> {
+    return of(this.feedback);
   }
 }
