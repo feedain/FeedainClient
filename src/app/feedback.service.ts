@@ -12,8 +12,9 @@ export class FeedbackService {
 
   constructor() { }
 
-  add(feedback: Feedback): void {
+  add(feedback: Feedback): Observable<any> {
     this.feedback = feedback;
+    return of(this.feedback);
   }
 
   get(): Observable<Feedback> {

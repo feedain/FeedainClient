@@ -13,8 +13,7 @@ export class SubmitFeedbackComponent implements OnInit {
   constructor(private feedbackService: FeedbackService) { }
 
   addFeedback(author: string, recipient: string, content: string): void {
-    this.feedbackService.add({author, recipient, content});
-    this.getFeedback();
+    this.feedbackService.add({author, recipient, content}).subscribe(feedback => this.feedback = feedback);
   }
 
   getFeedback(): void {
