@@ -17,7 +17,6 @@ import { SubmitFeedbackComponent } from './submit-feedback/submit-feedback.compo
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    HttpClientModule,
 
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
