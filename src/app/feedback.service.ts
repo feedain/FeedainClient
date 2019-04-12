@@ -8,9 +8,7 @@ import { Feedback } from './feedback';
   providedIn: 'root'
 })
 export class FeedbackService {
-  feedbacks: Feedback[] = [
-    {author: 'test', recipient: 'test', content: 'test'}
-  ];
+  feedbacks: Feedback[] = [];
 
   constructor() { }
 
