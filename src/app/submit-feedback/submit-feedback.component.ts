@@ -14,7 +14,9 @@ export class SubmitFeedbackComponent implements OnInit {
 
   addFeedback(author: string, recipient: string, content: string): void {
     this.feedbackService.add({author, recipient, content} as Feedback)
-      .subscribe(/* feedback => this.feedbacks.push(feedback) */);
+      .subscribe(feedback => {
+          this.feedbacks.push(feedback);
+        });
   }
 
   getFeedback(): void {

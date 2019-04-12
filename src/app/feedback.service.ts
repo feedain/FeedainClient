@@ -1,23 +1,27 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
 import { Feedback } from './feedback';
+
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable({
   providedIn: 'root'
 })
 export class FeedbackService {
-  feedbacks: Feedback[] = [];
+  private feedbacksUrl = 'api/feedbacks';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   add(feedback: Feedback): Observable<Feedback> {
-    this.feedbacks.push(feedback);
-    return of(feedback);
+    return this.http.post<Feedback>(this.feedbacksUrl, feedback, httpOptions);
   }
 
   get(): Observable<Feedback[]> {
-    return of(this.feedbacks);
+    return this.http.get<Feedback[]>(this.feedbacksUrl);
   }
 }
