@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { Feedback } from './feedback';
+import { Response } from './response';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -13,15 +14,22 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class FeedbackService {
-  private feedbacksUrl = 'api/feedbacks';
+  private serverAddress = 'http://localhost:8090';
+  private feedbackPath = '/feedback';
+  private allFeedbacksPathSuffix = '/all';
 
   constructor(private http: HttpClient) { }
 
   add(feedback: Feedback): Observable<Feedback> {
-    return this.http.post<Feedback>(this.feedbacksUrl, feedback, httpOptions);
+    const addFeedbackUrl = this.serverAddress + this.feedbackPath;
+    return this.http.post<Feedback>(addFeedbackUrl, feedback, httpOptions);
   }
 
   get(): Observable<Feedback[]> {
-    return this.http.get<Feedback[]>(this.feedbacksUrl);
+    const allFeedbacksUrl = this.serverAddress + this.feedbackPath + this.allFeedbacksPathSuffix;
+    // this.http.get<Response>(allFeedbacksUrl)
+    //   .subscribe(response => console.log('REST object: ' + response.responseText + '; ' + (response.entity as Feedback[])[0].));
+    // return null;
+    return this.http.get<Feedback[]>(allFeedbacksUrl);
   }
 }
