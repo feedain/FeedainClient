@@ -10,6 +10,7 @@
 
 <ul *ngIf="feedbacks">
   <li *ngFor="let feedback of feedbacks">
+    {{feedback.id}}<br>
     {{feedback.author}}<br>
     {{feedback.recipient}}<br>
     {{feedback.content}}
