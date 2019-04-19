@@ -8,9 +8,9 @@
 
 <button (click)="addFeedback(author.value, recipient.value, content.value)">Submit</button>
 
-<div *ngIf="response">
-  <ul *ngIf="!(response.entity.length === 0); else elseBlock">
-    <li *ngFor="let feedback of response.entity">
+<div *ngIf="feedbacks">
+  <ul *ngIf="!(feedbacks.length === 0); else elseBlock">
+    <li *ngFor="let feedback of feedbacks">
       {{feedback.id}}<br>
       {{feedback.feedbackGiver.username}}<br>
       {{feedback.feedbackTaker.username}}<br>
