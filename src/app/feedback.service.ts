@@ -20,9 +20,9 @@ export class FeedbackService {
 
   constructor(private http: HttpClient) { }
 
-  add(feedback: Feedback): Observable<Feedback> {
+  add(feedback: Feedback): Observable<Response> {
     const addFeedbackUrl = this.serverAddress + this.feedbackPath;
-    return this.http.post<Feedback>(addFeedbackUrl, feedback, httpOptions);
+    return this.http.post<Response>(addFeedbackUrl, feedback, httpOptions);
   }
 
   get(): Observable<Response> {
