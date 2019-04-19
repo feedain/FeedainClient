@@ -25,11 +25,8 @@ export class FeedbackService {
     return this.http.post<Feedback>(addFeedbackUrl, feedback, httpOptions);
   }
 
-  get(): Observable<Feedback[]> {
+  get(): Observable<Response> {
     const allFeedbacksUrl = this.serverAddress + this.feedbackPath + this.allFeedbacksPathSuffix;
-    // this.http.get<Response>(allFeedbacksUrl)
-    //   .subscribe(response => console.log('REST object: ' + response.responseText + '; ' + (response.entity as Feedback[])[0].));
-    // return null;
-    return this.http.get<Feedback[]>(allFeedbacksUrl);
+    return this.http.get<Response>(allFeedbacksUrl);
   }
 }
