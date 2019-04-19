@@ -12,9 +12,9 @@
   <ul *ngIf="!(response.entity.length === 0); else elseBlock">
     <li *ngFor="let feedback of response.entity">
       {{feedback.id}}<br>
-      {{feedback.author}}<br>
-      {{feedback.recipient}}<br>
-      {{feedback.content}}
+      {{feedback.feedbackGiver.username}}<br>
+      {{feedback.feedbackTaker.username}}<br>
+      {{feedback.feedbackText}}
     </li>
   </ul>
   <ng-template #elseBlock>
