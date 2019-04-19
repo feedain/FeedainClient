@@ -1,6 +1,9 @@
+import { UserBase } from './user-base';
+
 export class Feedback {
     id: number;
-    author: string;
-    recipient: string;
-    content: string;
+    feedbackGiver: UserBase;
+    feedbackTaker: UserBase;
+    feedbackText: string;
+    feedbackList: Feedback[];
 }
