@@ -1,12 +1,11 @@
-nav {
-    max-width: 1024px;
-    margin: auto;
-}
-
 h1 {
     font-family: SignPainter;
     color: darkred;
     font-size: 60px;
     margin-top: 25px;
     margin-bottom: 25px;
+}
+
+h2 {
+    font-family: Arial, Helvetica, sans-serif;
 }
