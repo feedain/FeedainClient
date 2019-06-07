@@ -1,6 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl } from "@angular/forms";
 
+import { WorkService } from "../work.service";
+import { Work } from "../work";
+
 @Component({
   selector: "app-submit-work",
   templateUrl: "./submit-work.component.html",
@@ -9,9 +12,13 @@ import { FormControl } from "@angular/forms";
 export class SubmitWorkComponent implements OnInit {
   workContent = new FormControl("");
 
-  constructor() { }
+  constructor(private workService: WorkService) { }
 
   ngOnInit() {
   }
 
+  submitWork() {
+    this.workService.addWork({content: this.workContent.value} as Work)
+      .subscribe();
+  }
 }

@@ -20,6 +20,7 @@ export class WorkService {
   constructor(private http: HttpClient) { }
 
   addWork(work: Work): Observable<Work> {
+    work.published = new Date();
     return this.http.post<Work>(this.workUrl, work, httpOptions);
   }
 }
