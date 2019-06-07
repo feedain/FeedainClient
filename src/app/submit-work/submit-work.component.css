@@ -10,3 +10,10 @@ h2 {
 p {
     margin-top: 0.5em;
 }
+
+button {
+    padding: .8em 1.6em .8em 1.6em;
+    border-radius: 10px;
+    border-width: 1px;
+    font-size: .8em;
+}

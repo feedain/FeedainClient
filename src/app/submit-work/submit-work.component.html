@@ -2,7 +2,4 @@
 
 <p>Please enter your work below, that you want to get feedback on. </p>
 <textarea [formControl]=workContent></textarea>
-
-<p>
-  Value: {{workContent.value}}
-</p>
+<button (click)="submitWork()">Submit</button>
