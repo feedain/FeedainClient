@@ -1,8 +1,8 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { SubmitWorkComponent } from './submit-work.component';
+import { SubmitWorkComponent } from "./submit-work.component";
 
-describe('SubmitWorkComponent', () => {
+describe("SubmitWorkComponent", () => {
   let component: SubmitWorkComponent;
   let fixture: ComponentFixture<SubmitWorkComponent>;
 
@@ -19,7 +19,7 @@ describe('SubmitWorkComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
