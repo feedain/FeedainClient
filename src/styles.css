@@ -5,6 +5,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+h2 {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
 textarea {
     font-family: Arial, Helvetica, sans-serif;
 }
