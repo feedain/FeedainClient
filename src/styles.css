@@ -2,12 +2,9 @@
 body {
     max-width: 1024px;
     margin: auto;
-}
-
-h2 {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-p {
+textarea {
     font-family: Arial, Helvetica, sans-serif;
 }
