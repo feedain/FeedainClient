@@ -5,10 +5,9 @@ import { Work } from "./work";
 @Injectable({
   providedIn: "root"
 })
-export class InMemoryDataService implements InMemoryDbService{
+export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    const works = [
-    ];
+    const works = [];
     return {works};
   }
 

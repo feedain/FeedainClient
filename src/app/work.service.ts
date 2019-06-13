@@ -15,9 +15,13 @@ const httpOptions = {
   providedIn: "root"
 })
 export class WorkService {
-  workUrl = "api/work";
+  workUrl = "api/works";
 
   constructor(private http: HttpClient) { }
+
+  getWork(): Observable<Work> {
+    return this.http.get<Work>(this.workUrl + "/0");
+  }
 
   addWork(work: Work): Observable<Work> {
     work.published = new Date();
