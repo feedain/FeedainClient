@@ -8,11 +8,13 @@ import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { AppComponent } from "./app.component";
 import { SubmitWorkComponent } from "./submit-work/submit-work.component";
 import { InMemoryDataService } from "./in-memory-data.service";
+import { CheckSubmissionComponent } from "./check-submission/check-submission.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    SubmitWorkComponent
+    SubmitWorkComponent,
+    CheckSubmissionComponent
   ],
   imports: [
     BrowserModule,
