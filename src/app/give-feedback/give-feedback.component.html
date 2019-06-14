@@ -1,3 +1,8 @@
-<p>
-  give-feedback works!
-</p>
+<h2>Give feedback</h2>
+<p>Would you like to give feedback on the following work? </p>
+<button>Give me something else</button>
+
+<div *ngIf="work">
+  <p>{{work.published}}</p>
+  <div class="content"><p>{{work.content}}</p></div>
+</div>

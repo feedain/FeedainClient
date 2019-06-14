@@ -1,0 +1,27 @@
+p {
+    display: inline;
+}
+
+/* TODO: allign with p */
+button {
+    float: right;
+    padding-top: .4em;
+    padding-bottom: .4em;
+}
+
+div {
+    margin-top: 2em;
+}
+
+div.content {
+    margin-top: 0;
+}
+
+div p {
+    display: block;
+    margin-bottom: 0;
+}
+
+div.content p {
+    margin-bottom: .15em;
+}
