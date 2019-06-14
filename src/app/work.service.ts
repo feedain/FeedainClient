@@ -24,8 +24,6 @@ export class WorkService {
 
   // TODO: add work not found message
   getWork(id: number): Observable<string> {
-    // let result = this.http.get<string>(this.workUrl + `?peer=peer0.org1.example.com&fcn=query&args=[\"work_${id}\"]`, httpOptions);
-    // let message = JSON.parse(result);
     return this.http.get<string>(this.workUrl + `?peer=peer0.org1.example.com&fcn=query&args=[\"work_${id}\"]`, httpOptions);
   }
 
