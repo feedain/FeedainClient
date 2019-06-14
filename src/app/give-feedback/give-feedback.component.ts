@@ -23,7 +23,7 @@ export class GiveFeedbackComponent implements OnInit {
   }
 
   getWork() {
-    this.workService.getWork(this.workId).subscribe(work => this.work = work);
+    // this.workService.getWork(this.workId).subscribe(work => this.work = work);
     this.workId++;
   }
 

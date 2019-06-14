@@ -9,7 +9,7 @@ const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json",
 // tslint:disable-next-line: max-line-length
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjA1MzYwOTgsInVzZXJuYW1lIjoiSmltIiwib3JnTmFtZSI6Ik9yZzEiLCJpYXQiOjE1NjA1MDAwOTh9.EfUOnudA-bf2UElU94FWoawLIfkoxbWD36ta-8g3wIU"
+    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjA1NDEzMTIsInVzZXJuYW1lIjoiSmltIiwib3JnTmFtZSI6Ik9yZzEiLCJpYXQiOjE1NjA1MDUzMTJ9.9g4K1MkCiUCnfAukSk-22AcWh7Qy_9JchbpEjzQ9yFI"
   })
 };
 
@@ -23,8 +23,10 @@ export class WorkService {
   constructor(private http: HttpClient) { }
 
   // TODO: add work not found message
-  getWork(id: number): Observable<Work> {
-    return this.http.get<Work>(this.workUrl + `?peer=peer0.org1.example.com&fcn=query&args=[\"${id}\"]`, httpOptions);
+  getWork(id: number): Observable<string> {
+    // let result = this.http.get<string>(this.workUrl + `?peer=peer0.org1.example.com&fcn=query&args=[\"work_${id}\"]`, httpOptions);
+    // let message = JSON.parse(result);
+    return this.http.get<string>(this.workUrl + `?peer=peer0.org1.example.com&fcn=query&args=[\"work_${id}\"]`, httpOptions);
   }
 
   addWork(work: Work): Observable<Work> {

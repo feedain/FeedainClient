@@ -20,6 +20,6 @@ export class CheckSubmissionComponent implements OnInit {
   }
 
   getWork() {
-    this.workService.getWork(this.keyContent.value).subscribe(work => this.work = work);
+    this.workService.getWork(this.keyContent.value).subscribe(work => this.work = JSON.parse(work));
   }
 }
