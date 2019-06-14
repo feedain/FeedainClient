@@ -8,8 +8,8 @@ import { Work } from "./work";
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json",
-    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjA1MzMyMzYsInVzZXJuYW1lIjoiSmltIiwib3JnTmFtZSI6Ik9yZzEiLCJpYX"
-    + "QiOjE1NjA0OTcyMzZ9.jBpJQ5NB9GeeqG7odAzWFe6LubYdswp7ugrWCPHh1mg"
+// tslint:disable-next-line: max-line-length
+    Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE1NjA1MzYwOTgsInVzZXJuYW1lIjoiSmltIiwib3JnTmFtZSI6Ik9yZzEiLCJpYXQiOjE1NjA1MDAwOTh9.EfUOnudA-bf2UElU94FWoawLIfkoxbWD36ta-8g3wIU"
   })
 };
 
