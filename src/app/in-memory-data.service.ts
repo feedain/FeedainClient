@@ -26,6 +26,12 @@ export class InMemoryDataService implements InMemoryDbService {
           {submitted: new Date(), content: "test"},
           {submitted: new Date(), content: "That's shit"}
         ]
+      },
+      {
+        id: 1,
+        published: new Date(),
+        content: "Wahoo!",
+        feedback: []
       }
     ];
     return {works};
