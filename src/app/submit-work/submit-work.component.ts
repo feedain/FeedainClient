@@ -19,6 +19,7 @@ export class SubmitWorkComponent implements OnInit {
   }
 
   submitWork() {
+    // TODO: move default Work properties
     this.workService.addWork({published: new Date(), content: this.workContent.value, feedback: []} as Work)
       .subscribe();
   }
