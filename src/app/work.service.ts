@@ -19,8 +19,9 @@ export class WorkService {
 
   constructor(private http: HttpClient) { }
 
-  getWork(): Observable<Work> {
-    return this.http.get<Work>(this.workUrl + "/0");
+  // TODO: add work not found message
+  getWork(id: number): Observable<Work> {
+    return this.http.get<Work>(this.workUrl + `/${id}`);
   }
 
   addWork(work: Work): Observable<Work> {

@@ -1,7 +1,7 @@
 <h2>Check submission</h2>
 
 <p>To view received feedback on your work, please enter the key of that work. You got it when you submitted your work. </p>
-<label>Key: </label><input type="text" [formControl]="keyContent"><button>Check submission</button>
+<label>Key: </label><input type="text" [formControl]="keyContent"><button (click)="getWork()">Check submission</button>
 
 <div *ngIf="work">
     <h2>Work #{{work.id}}</h2>
