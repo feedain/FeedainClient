@@ -24,13 +24,13 @@ export class InMemoryDataService implements InMemoryDbService {
           + "metus, porttitor facilisis quam laoreet sed. Praesent quis turpis id urna auctor laoreet. ",
         feedback: [
           {submitted: new Date(), content: "test"},
-          {submitted: new Date(), content: "That's shit"}
+          {submitted: new Date(), content: "test2"}
         ]
       },
       {
         id: 1,
         published: new Date(),
-        content: "Wahoo!",
+        content: "Test3",
         feedback: []
       }
     ];

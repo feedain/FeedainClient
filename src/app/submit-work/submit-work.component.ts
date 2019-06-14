@@ -19,7 +19,7 @@ export class SubmitWorkComponent implements OnInit {
   }
 
   submitWork() {
-    this.workService.addWork({content: this.workContent.value} as Work)
+    this.workService.addWork({published: new Date(), content: this.workContent.value, feedback: []} as Work)
       .subscribe();
   }
 }

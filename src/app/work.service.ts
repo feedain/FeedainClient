@@ -31,4 +31,8 @@ export class WorkService {
     work.published = new Date();
     return this.http.post<Work>(this.workUrl, work, httpOptions);
   }
+
+  submitFeedback(work: Work): Observable<any> {
+    return this.http.put<Work>(this.workUrl, work, httpOptions);
+  }
 }

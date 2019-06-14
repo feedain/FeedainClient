@@ -1,0 +1,12 @@
+<h2>Give feedback</h2>
+<p>Would you like to give feedback on the following work? </p>
+<button (click)="getWork()">Give me something else</button>
+
+<div *ngIf="work">
+  <p>{{work.published}}</p>
+  <div class="content"><p>{{work.content}}</p></div>
+
+  <h3>Feedback</h3>
+  <textarea [formControl]="feedbackContent"></textarea>
+  <button (click)="submitFeedback()">Submit</button>
+</div>
