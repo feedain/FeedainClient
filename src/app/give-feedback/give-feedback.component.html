@@ -7,6 +7,6 @@
   <div class="content"><p>{{work.content}}</p></div>
 
   <h3>Feedback</h3>
-  <textarea></textarea>
-  <button>Submit</button>
+  <textarea [formControl]="feedbackContent"></textarea>
+  <button (click)="submitFeedback()">Submit</button>
 </div>
