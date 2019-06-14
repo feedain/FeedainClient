@@ -1,6 +1,6 @@
 <h2>Give feedback</h2>
 <p>Would you like to give feedback on the following work? </p>
-<button>Give me something else</button>
+<button (click)="getWork()">Give me something else</button>
 
 <div *ngIf="work">
   <p>{{work.published}}</p>
