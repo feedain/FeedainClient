@@ -22,9 +22,9 @@ export class WorkService {
 
   constructor(private http: HttpClient) { }
 
-  getWork(): Observable<string> {
-    // return this.http.get<string>(this.workUrl + "/0");
-    return this.http.get<string>(this.workUrl + "?peer=peer0.org1.example.com&fcn=query&args=[\"1\"]", httpOptions);
+  // TODO: add work not found message
+  getWork(id: number): Observable<Work> {
+    return this.http.get<Work>(this.workUrl + `?peer=peer0.org1.example.com&fcn=query&args=[\"${id}\"]`, httpOptions);
   }
 
   addWork(work: Work): Observable<Work> {

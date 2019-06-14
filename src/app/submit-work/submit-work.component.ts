@@ -11,21 +11,15 @@ import { Work } from "../work";
 })
 export class SubmitWorkComponent implements OnInit {
   workContent = new FormControl("");
-  // work: Work;
   test: string;
 
   constructor(private workService: WorkService) { }
 
   ngOnInit() {
-    this.getSubmittedWork();
   }
 
   submitWork() {
     this.workService.addWork({content: this.workContent.value} as Work)
-      .subscribe(work => this.getSubmittedWork());
-  }
-
-  getSubmittedWork() {
-    this.workService.getWork().subscribe(work => this.test = JSON.parse(work).message);
+      .subscribe();
   }
 }
