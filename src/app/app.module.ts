@@ -10,12 +10,14 @@ import { AppComponent } from "./app.component";
 import { SubmitWorkComponent } from "./submit-work/submit-work.component";
 import { InMemoryDataService } from "./in-memory-data.service";
 import { CheckSubmissionComponent } from "./check-submission/check-submission.component";
+import { GiveFeedbackComponent } from "./give-feedback/give-feedback.component";
 
 const appRoutes: Routes = [
+  { path: "giveFeedback", component: GiveFeedbackComponent },
   { path: "submitWork", component: SubmitWorkComponent },
   { path: "checkSubmission", component: CheckSubmissionComponent },
   { path: "",
-    redirectTo: "/submitWork",
+    redirectTo: "/giveFeedback",
     pathMatch: "full"
   }
 ];
@@ -24,7 +26,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     SubmitWorkComponent,
-    CheckSubmissionComponent
+    CheckSubmissionComponent,
+    GiveFeedbackComponent
   ],
   imports: [
     BrowserModule,
